@@ -3,10 +3,10 @@ public class Usuario {
     private String nombre;
     private String contrasena;
 
-    public Usuario(String nombre, String contraseña) {
+    public Usuario(String nombre, String contrasena) {
 
         this.nombre = nombre;
-        this.contrasena = contraseña;
+        this.contrasena = contrasena;
     }
 
     public void mostrarInfo() {
@@ -15,13 +15,13 @@ public class Usuario {
     }
 
 
-    public boolean autenticar(String contraseñaIngresada) {
+    public boolean autenticar(String contrasenaIngresada) {
 
-        return contrasena.equals(contraseñaIngresada);
+        return contrasena.equals(contrasenaIngresada);
     }
 
 
-    public boolean validarContraseña() {
+    public boolean validarContrasena() {
 
         return contrasena.length() >= 8;
     }
