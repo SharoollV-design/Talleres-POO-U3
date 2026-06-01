@@ -1,0 +1,17 @@
+@startuml
+
+interface Reparacion {
+    +reparar() 
+}
+
+interface Limpieza { 
+    +limpiar() 
+}
+
+class Tecnico implements Reparacion
+class PersonalLimpieza implements Limpieza
+
+Tecnico --> Reparacion
+PersonalLimpieza --> Limpieza
+
+@enduml
