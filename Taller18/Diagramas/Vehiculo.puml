@@ -1,0 +1,16 @@
+@startuml
+
+interface Conducible {
+     +conducir() 
+}
+interface Transportador { 
+    +cargarMercancia()
+}
+
+class Coche implements Conducible
+class Camion implements Conducible, Transportador
+
+Conducible <|.. Camion
+Transportador <|.. Camion
+
+@enduml

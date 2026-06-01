@@ -1,0 +1,22 @@
+@startuml
+
+interface Retiro { 
+    +retirar(monto: double) 
+}
+
+interface Transferencia { 
+    +transferir(monto: double) 
+}
+
+interface PagoFactura { 
+    +pagarFactura(factura: String) 
+}
+
+class Cajero implements Retiro, Transferencia
+class SistemaPagos implements PagoFactura
+
+Cajero --> Retiro
+Cajero --> Transferencia
+SistemaPagos --> PagoFactura
+
+@enduml
