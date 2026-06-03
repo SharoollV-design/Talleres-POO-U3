@@ -1,0 +1,31 @@
+@startuml
+
+interface Almacenamiento {
+    +guardar(dato: String)
+    +recuperar(): String
+}
+
+
+class AlmacenamientoLocal implements Almacenamiento {
+    +guardar(dato: String)
+    +recuperar(): String
+}
+
+class AlmacenamientoNube implements Almacenamiento {
+    +guardar(dato: String)
+    +recuperar(): String
+}
+
+
+class GestorAlmacenamiento {
+    -servicio: Almacenamiento
+    +GestorAlmacenamiento(servicio: Almacenamiento)
+    +almacenar(dato: String)
+    +mostrarDato(): void
+}
+
+
+GestorAlmacenamiento --> Almacenamiento
+AlmacenamientoLocal --> Almacenamiento
+AlmacenamientoNube --> Almacenamiento
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+
+interface GeneradorReportes {
+    +generar(contenido: String): void
+}
+
+
+class ReporteExcel implements GeneradorReportes {
+    +generar(contenido: String): void
+}
+
+class ReportePDF implements GeneradorReportes {
+    +generar(contenido: String): void
+}
+
+
+class GestorReportes {
+    -generador: GeneradorReportes
+    +GestorReportes(generador: GeneradorReportes)
+    +crearReporte(contenido: String): void
+}
+
+
+GestorReportes --> GeneradorReportes
+ReporteExcel --> GeneradorReportes
+ReportePDF --> GeneradorReportes
+@enduml

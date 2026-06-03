@@ -1,0 +1,27 @@
+@startuml
+
+interface ServicioAutenticacion {
+    + autenticar(usuario: String, clave: String): boolean
+}
+
+
+class AutenticacionLocal implements ServicioAutenticacion {
+    + autenticar(usuario: String, clave: String): boolean
+}
+
+class AutenticacionOAuth implements ServicioAutenticacion {
+    +autenticar(usuario: String, clave: String): boolean
+}
+
+
+class GestorAutenticacion {
+    -servicio: ServicioAutenticacion
+    +GestorAutenticacion(servicio: ServicioAutenticacion)
+    +login(usuario: String, clave: String): void
+}
+
+
+GestorAutenticacion --> ServicioAutenticacion
+AutenticacionLocal --> ServicioAutenticacion
+AutenticacionOAuth --> ServicioAutenticacion
+@enduml
